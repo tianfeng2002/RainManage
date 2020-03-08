@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.Rain.mapper.RainqualityMapper">
+    <select id="selectRainlist" resultType="cn.Rain.pojo.Rainquality">
+    SELECT * FROM  rainquality
+</select>
+    <insert id="insert" parameterType="cn.Rain.pojo.Rainquality">
+         insert into rainquality(districtName,monitorTime,rain,monitoringStation,monitoringAddress)
+         values(#{districtName},#{monitorTime},#{rain},#{monitoringStation},#{monitoringAddress})
+    </insert>
+    <delete id="dele" parameterType="cn.Rain.pojo.Rainquality">
+        DELETE FROM rainquality WHERE id=#{id}
+    </delete>
+</mapper>
